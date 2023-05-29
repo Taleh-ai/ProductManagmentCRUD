@@ -1,9 +1,12 @@
 package com.example.product.dto;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
-public class ProductDTO {
+@Builder
+public class ProductResponceDTO {
     private String name;
     private double price;
+    private int quantity;
 }
