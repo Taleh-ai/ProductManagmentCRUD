@@ -23,7 +23,7 @@ public class ProductController {
         return service.getAllProducts();
     }
     @PostMapping("/addproduct")
-    public void addProduct(ProductRequestDTO dto){
+    public void addProduct(@RequestBody ProductRequestDTO dto){
         service.createProduct(dto);
     }
     @DeleteMapping("/removeproduct/{id}")
@@ -32,11 +32,11 @@ public class ProductController {
     }
 
     @PutMapping("/update/{id}")
-    public void updateproduct(Long id ,ProductRequestDTO dto){
+    public void updateproduct(@PathVariable Long id ,@RequestBody ProductRequestDTO dto){
         service.updateProduct(id,dto);
     }
     @PatchMapping("/restock/{id}")
-    public void restock(Long id,int stock){
-        service.reStock(id,stock);
+    public void restock(@PathVariable Long id,@RequestBody int stock){
+        service.reStock( id,  stock);
     }
 }
