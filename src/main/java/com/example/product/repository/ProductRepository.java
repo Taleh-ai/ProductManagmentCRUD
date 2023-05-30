@@ -21,4 +21,7 @@ public interface ProductRepository extends JpaRepository<ProductEntity,Long> {
     ProductEntity findByName(String name);
     boolean existsByName(String name);
 
+
+
+
 }

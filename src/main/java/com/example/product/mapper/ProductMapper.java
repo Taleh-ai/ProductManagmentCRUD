@@ -12,13 +12,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductMapper {
 
-    public ProductResponceDTO productResponcemapper (ProductEntity entity){
+    public ProductResponceDTO productResponseMapper(ProductEntity entity){
         ProductResponceDTO dto = ProductResponceDTO.builder().price(entity.getPrice())
                 .name(entity.getName()).quantity(entity.getQuantity()).build();
         return dto;
 
     }
-    public ProductEntity prodctrequestmapper(ProductRequestDTO dto){
+    public ProductEntity productRequestMapper(ProductRequestDTO dto){
         ProductEntity entity = ProductEntity.builder().price(dto.getPrice()).
                 quantity(dto.getQuantity()).cost(dto.getCost()).name(dto.getName()).build();
         return entity;

@@ -14,25 +14,25 @@ import java.util.List;
 public class ProductController {
     private final ProductService service;
 
-    @GetMapping("/getproduct/{id}")
-    public ProductResponceDTO getproduct(@PathVariable Long id){
+    @GetMapping("/{id}")
+    public ProductResponceDTO getProduct(@PathVariable Long id){
        return service.getProduct(id);
     }
-    @GetMapping("/getproduct")
-    public List<ProductResponceDTO> getproducts(){
+    @GetMapping("/all")
+    public List<ProductResponceDTO> getProducts(){
         return service.getAllProducts();
     }
-    @PostMapping("/addproduct")
+    @PostMapping("/add")
     public void addProduct(@RequestBody ProductRequestDTO dto){
         service.createProduct(dto);
     }
-    @DeleteMapping("/removeproduct/{id}")
+    @DeleteMapping("/remove/{id}")
     public void remove(@PathVariable Long id){
         service.deleteProduct(id);
     }
 
     @PutMapping("/update/{id}")
-    public void updateproduct(@PathVariable Long id ,@RequestBody ProductRequestDTO dto){
+    public void updateProduct(@PathVariable Long id ,@RequestBody ProductRequestDTO dto){
         service.updateProduct(id,dto);
     }
     @PatchMapping("/restock/{id}")
